@@ -31,6 +31,11 @@ When /I (un)?check the following ratings: (.*)/ do |uncheck, rating_list|
 	end
 end
 
+Then /^the director of "(.*?)" should be "(.*?)"$/ do |mov_title, name|
+	movie = Movie.find_by_title mov_title
+	movie.director.should == name
+end
+
 
 Then /I should see all the movies/ do
 	rows = page.body.scan(/<tr>/).count
