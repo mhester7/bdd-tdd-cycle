@@ -1,0 +1,3 @@
+%h1 All Movies by  #{@movie_director}
+
+= debug(@movie_director)

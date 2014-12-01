@@ -7,7 +7,7 @@ class MoviesController < ApplicationController
   end
 
 	def find
-		#debugger
+		debugger
 		#director = params[:id]
 		@movies = Movie.find_all_by_director(params[:director])
 		@movie_title = params[:title]

@@ -379,3 +379,1079 @@ Connecting to database specified by database.yml
   [1m[35m (0.1ms)[0m  SELECT version FROM "schema_migrations"
   [1m[36m (13.3ms)[0m  [1mINSERT INTO "schema_migrations" (version) VALUES ('20141130214059')[0m
   [1m[35m (12.5ms)[0m  INSERT INTO "schema_migrations" (version) VALUES ('20111119180638')
+
+
+Started GET "/movies/7" for 127.0.0.1 at 2014-11-30 19:08:52 -0500
+Processing by MoviesController#show as HTML
+  Parameters: {"id"=>"7"}
+  [1m[35mMovie Load (0.2ms)[0m  SELECT "movies".* FROM "movies" WHERE "movies"."id" = ? LIMIT 1  [["id", "7"]]
+  Rendered movies/show.html.haml within layouts/application (2.3ms)
+Completed 200 OK in 9.3ms (Views: 7.2ms | ActiveRecord: 0.2ms)
+
+
+Started GET "/assets/application.css?body=1" for 127.0.0.1 at 2014-11-30 19:08:52 -0500
+Served asset /application.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/application.js?body=1" for 127.0.0.1 at 2014-11-30 19:08:52 -0500
+Served asset /application.js - 304 Not Modified (5ms)
+
+
+Started GET "/assets/jquery_ujs.js?body=1" for 127.0.0.1 at 2014-11-30 19:08:52 -0500
+Served asset /jquery_ujs.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/jquery.js?body=1" for 127.0.0.1 at 2014-11-30 19:08:52 -0500
+Served asset /jquery.js - 304 Not Modified (0ms)
+Connecting to database specified by database.yml
+  [1m[36m (2.2ms)[0m  [1mSELECT "schema_migrations"."version" FROM "schema_migrations" [0m
+  [1m[35m (0.5ms)[0m  select sqlite_version(*)
+  [1m[36m (59.1ms)[0m  [1mCREATE TABLE "movies" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "title" varchar(255), "rating" varchar(255), "description" text, "release_date" datetime, "created_at" datetime, "updated_at" datetime, "director" varchar(255)) [0m
+  [1m[35m (23.3ms)[0m  CREATE TABLE "schema_migrations" ("version" varchar(255) NOT NULL) 
+  [1m[36m (10.4ms)[0m  [1mCREATE UNIQUE INDEX "unique_schema_migrations" ON "schema_migrations" ("version")[0m
+  [1m[35m (0.1ms)[0m  SELECT version FROM "schema_migrations"
+  [1m[36m (10.6ms)[0m  [1mINSERT INTO "schema_migrations" (version) VALUES ('20141130214059')[0m
+  [1m[35m (13.4ms)[0m  INSERT INTO "schema_migrations" (version) VALUES ('20111119180638')
+Connecting to database specified by database.yml
+
+
+Started GET "/movies/7" for 127.0.0.1 at 2014-11-30 19:20:44 -0500
+Processing by MoviesController#show as HTML
+  Parameters: {"id"=>"7"}
+  [1m[36mMovie Load (8.3ms)[0m  [1mSELECT "movies".* FROM "movies" WHERE "movies"."id" = ? LIMIT 1[0m  [["id", "7"]]
+  Rendered movies/show.html.haml within layouts/application (18.5ms)
+Completed 200 OK in 38.7ms (Views: 28.7ms | ActiveRecord: 8.3ms)
+
+
+Started GET "/assets/application.css?body=1" for 127.0.0.1 at 2014-11-30 19:20:44 -0500
+Served asset /application.css - 304 Not Modified (4ms)
+
+
+Started GET "/assets/application.js?body=1" for 127.0.0.1 at 2014-11-30 19:20:44 -0500
+Served asset /application.js - 304 Not Modified (1ms)
+
+
+Started GET "/assets/jquery_ujs.js?body=1" for 127.0.0.1 at 2014-11-30 19:20:44 -0500
+Served asset /jquery_ujs.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/jquery.js?body=1" for 127.0.0.1 at 2014-11-30 19:20:44 -0500
+Served asset /jquery.js - 304 Not Modified (0ms)
+
+
+Started GET "/movies" for 127.0.0.1 at 2014-11-30 19:21:19 -0500
+Processing by MoviesController#index as HTML
+Redirected to http://localhost:3000/movies?ratings%5BG%5D=1&ratings%5BNC-17%5D=1&ratings%5BPG%5D=1&ratings%5BPG-13%5D=1&ratings%5BR%5D=1&sort=release_date
+Completed 302 Found in 8.3ms (ActiveRecord: 0.0ms)
+
+
+Started GET "/movies?ratings%5BG%5D=1&ratings%5BNC-17%5D=1&ratings%5BPG%5D=1&ratings%5BPG-13%5D=1&ratings%5BR%5D=1&sort=release_date" for 127.0.0.1 at 2014-11-30 19:21:19 -0500
+Processing by MoviesController#index as HTML
+  Parameters: {"ratings"=>{"G"=>"1", "NC-17"=>"1", "PG"=>"1", "PG-13"=>"1", "R"=>"1"}, "sort"=>"release_date"}
+  [1m[35mMovie Load (0.6ms)[0m  SELECT "movies".* FROM "movies" WHERE "movies"."rating" IN ('G', 'NC-17', 'PG', 'PG-13', 'R') ORDER BY release_date
+  Rendered movies/index.html.haml within layouts/application (43.1ms)
+Completed 200 OK in 74.9ms (Views: 55.2ms | ActiveRecord: 0.6ms)
+
+
+Started GET "/assets/application.css?body=1" for 127.0.0.1 at 2014-11-30 19:21:19 -0500
+Served asset /application.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/application.js?body=1" for 127.0.0.1 at 2014-11-30 19:21:19 -0500
+Served asset /application.js - 304 Not Modified (8ms)
+
+
+Started GET "/assets/jquery_ujs.js?body=1" for 127.0.0.1 at 2014-11-30 19:21:19 -0500
+Served asset /jquery_ujs.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/jquery.js?body=1" for 127.0.0.1 at 2014-11-30 19:21:19 -0500
+Served asset /jquery.js - 304 Not Modified (4ms)
+
+
+Started GET "/movies/17" for 127.0.0.1 at 2014-11-30 19:21:31 -0500
+Processing by MoviesController#show as HTML
+  Parameters: {"id"=>"17"}
+  [1m[36mMovie Load (0.3ms)[0m  [1mSELECT "movies".* FROM "movies" WHERE "movies"."id" = ? LIMIT 1[0m  [["id", "17"]]
+  Rendered movies/show.html.haml within layouts/application (3.1ms)
+Completed 200 OK in 11.4ms (Views: 8.4ms | ActiveRecord: 0.3ms)
+
+
+Started GET "/assets/application.css?body=1" for 127.0.0.1 at 2014-11-30 19:21:32 -0500
+Served asset /application.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/application.js?body=1" for 127.0.0.1 at 2014-11-30 19:21:32 -0500
+Served asset /application.js - 304 Not Modified (11ms)
+
+
+Started GET "/assets/jquery_ujs.js?body=1" for 127.0.0.1 at 2014-11-30 19:21:32 -0500
+Served asset /jquery_ujs.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/jquery.js?body=1" for 127.0.0.1 at 2014-11-30 19:21:32 -0500
+Served asset /jquery.js - 304 Not Modified (0ms)
+
+
+Started GET "/movies/17/edit" for 127.0.0.1 at 2014-11-30 19:21:38 -0500
+Processing by MoviesController#edit as HTML
+  Parameters: {"id"=>"17"}
+  [1m[35mMovie Load (0.8ms)[0m  SELECT "movies".* FROM "movies" WHERE "movies"."id" = ? LIMIT 1  [["id", "17"]]
+  Rendered movies/edit.html.haml within layouts/application (12.7ms)
+Completed 200 OK in 20.2ms (Views: 17.7ms | ActiveRecord: 0.8ms)
+
+
+Started GET "/assets/application.css?body=1" for 127.0.0.1 at 2014-11-30 19:21:38 -0500
+Served asset /application.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/application.js?body=1" for 127.0.0.1 at 2014-11-30 19:21:38 -0500
+Served asset /application.js - 304 Not Modified (19ms)
+
+
+Started GET "/assets/jquery_ujs.js?body=1" for 127.0.0.1 at 2014-11-30 19:21:38 -0500
+Served asset /jquery_ujs.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/jquery.js?body=1" for 127.0.0.1 at 2014-11-30 19:21:38 -0500
+Served asset /jquery.js - 304 Not Modified (0ms)
+
+
+Started PUT "/movies/17" for 127.0.0.1 at 2014-11-30 19:21:47 -0500
+Processing by MoviesController#update as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"sAmGQmKSUdS6b5fmiCVL8+3RCITYJkvdiKvh5ILiS60=", "movie"=>{"title"=>"2001: A Space Odyssey", "rating"=>"G", "release_date(1i)"=>"1968", "release_date(2i)"=>"4", "release_date(3i)"=>"6", "director"=>"Stanley Kubrick"}, "commit"=>"Update Movie Info", "id"=>"17"}
+  [1m[36mMovie Load (0.2ms)[0m  [1mSELECT "movies".* FROM "movies" WHERE "movies"."id" = ? LIMIT 1[0m  [["id", "17"]]
+  [1m[35m (0.1ms)[0m  begin transaction
+  [1m[36m (8.4ms)[0m  [1mUPDATE "movies" SET "director" = 'Stanley Kubrick', "updated_at" = '2014-12-01 00:21:47.829302' WHERE "movies"."id" = 17[0m
+  [1m[35m (19.2ms)[0m  commit transaction
+Redirected to http://localhost:3000/movies/17
+Completed 302 Found in 48.6ms (ActiveRecord: 28.0ms)
+
+
+Started GET "/movies/17" for 127.0.0.1 at 2014-11-30 19:21:47 -0500
+Processing by MoviesController#show as HTML
+  Parameters: {"id"=>"17"}
+  [1m[36mMovie Load (0.1ms)[0m  [1mSELECT "movies".* FROM "movies" WHERE "movies"."id" = ? LIMIT 1[0m  [["id", "17"]]
+  Rendered movies/show.html.haml within layouts/application (2.0ms)
+Completed 200 OK in 11.7ms (Views: 9.3ms | ActiveRecord: 0.1ms)
+
+
+Started GET "/assets/application.css?body=1" for 127.0.0.1 at 2014-11-30 19:21:47 -0500
+Served asset /application.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/application.js?body=1" for 127.0.0.1 at 2014-11-30 19:21:48 -0500
+Served asset /application.js - 304 Not Modified (1ms)
+
+
+Started GET "/assets/jquery_ujs.js?body=1" for 127.0.0.1 at 2014-11-30 19:21:48 -0500
+Served asset /jquery_ujs.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/jquery.js?body=1" for 127.0.0.1 at 2014-11-30 19:21:48 -0500
+Served asset /jquery.js - 304 Not Modified (0ms)
+
+
+Started GET "/movies" for 127.0.0.1 at 2014-11-30 19:21:51 -0500
+Processing by MoviesController#index as HTML
+Redirected to http://localhost:3000/movies?ratings%5BG%5D=1&ratings%5BNC-17%5D=1&ratings%5BPG%5D=1&ratings%5BPG-13%5D=1&ratings%5BR%5D=1&sort=release_date
+Completed 302 Found in 1.4ms (ActiveRecord: 0.0ms)
+
+
+Started GET "/movies?ratings%5BG%5D=1&ratings%5BNC-17%5D=1&ratings%5BPG%5D=1&ratings%5BPG-13%5D=1&ratings%5BR%5D=1&sort=release_date" for 127.0.0.1 at 2014-11-30 19:21:51 -0500
+Processing by MoviesController#index as HTML
+  Parameters: {"ratings"=>{"G"=>"1", "NC-17"=>"1", "PG"=>"1", "PG-13"=>"1", "R"=>"1"}, "sort"=>"release_date"}
+  [1m[35mMovie Load (1.0ms)[0m  SELECT "movies".* FROM "movies" WHERE "movies"."rating" IN ('G', 'NC-17', 'PG', 'PG-13', 'R') ORDER BY release_date
+  Rendered movies/index.html.haml within layouts/application (41.0ms)
+Completed 200 OK in 66.4ms (Views: 50.4ms | ActiveRecord: 1.0ms)
+
+
+Started GET "/assets/application.css?body=1" for 127.0.0.1 at 2014-11-30 19:21:51 -0500
+Served asset /application.css - 304 Not Modified (17ms)
+
+
+Started GET "/assets/application.js?body=1" for 127.0.0.1 at 2014-11-30 19:21:51 -0500
+Served asset /application.js - 304 Not Modified (12ms)
+
+
+Started GET "/assets/jquery_ujs.js?body=1" for 127.0.0.1 at 2014-11-30 19:21:51 -0500
+Served asset /jquery_ujs.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/jquery.js?body=1" for 127.0.0.1 at 2014-11-30 19:21:51 -0500
+Served asset /jquery.js - 304 Not Modified (1ms)
+
+
+Started GET "/movies/17" for 127.0.0.1 at 2014-11-30 19:21:52 -0500
+Processing by MoviesController#show as HTML
+  Parameters: {"id"=>"17"}
+  [1m[36mMovie Load (0.2ms)[0m  [1mSELECT "movies".* FROM "movies" WHERE "movies"."id" = ? LIMIT 1[0m  [["id", "17"]]
+  Rendered movies/show.html.haml within layouts/application (7.7ms)
+Completed 200 OK in 19.0ms (Views: 14.2ms | ActiveRecord: 0.2ms)
+
+
+Started GET "/assets/application.css?body=1" for 127.0.0.1 at 2014-11-30 19:21:52 -0500
+Served asset /application.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/application.js?body=1" for 127.0.0.1 at 2014-11-30 19:21:53 -0500
+Served asset /application.js - 304 Not Modified (3ms)
+
+
+Started GET "/assets/jquery_ujs.js?body=1" for 127.0.0.1 at 2014-11-30 19:21:53 -0500
+Served asset /jquery_ujs.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/jquery.js?body=1" for 127.0.0.1 at 2014-11-30 19:21:53 -0500
+Served asset /jquery.js - 304 Not Modified (0ms)
+Connecting to database specified by database.yml
+Connecting to database specified by database.yml
+  [1m[36m (1.7ms)[0m  [1mSELECT "schema_migrations"."version" FROM "schema_migrations" [0m
+  [1m[35m (0.2ms)[0m  select sqlite_version(*)
+  [1m[36m (17.7ms)[0m  [1mCREATE TABLE "movies" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "title" varchar(255), "rating" varchar(255), "description" text, "release_date" datetime, "created_at" datetime, "updated_at" datetime, "director" varchar(255)) [0m
+  [1m[35m (10.7ms)[0m  CREATE TABLE "schema_migrations" ("version" varchar(255) NOT NULL) 
+  [1m[36m (10.9ms)[0m  [1mCREATE UNIQUE INDEX "unique_schema_migrations" ON "schema_migrations" ("version")[0m
+  [1m[35m (0.0ms)[0m  SELECT version FROM "schema_migrations"
+  [1m[36m (11.0ms)[0m  [1mINSERT INTO "schema_migrations" (version) VALUES ('20141130214059')[0m
+  [1m[35m (12.4ms)[0m  INSERT INTO "schema_migrations" (version) VALUES ('20111119180638')
+Connecting to database specified by database.yml
+  [1m[36m (1.8ms)[0m  [1mSELECT "schema_migrations"."version" FROM "schema_migrations" [0m
+  [1m[35m (0.2ms)[0m  select sqlite_version(*)
+  [1m[36m (53.4ms)[0m  [1mCREATE TABLE "movies" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "title" varchar(255), "rating" varchar(255), "description" text, "release_date" datetime, "created_at" datetime, "updated_at" datetime, "director" varchar(255)) [0m
+  [1m[35m (9.0ms)[0m  CREATE TABLE "schema_migrations" ("version" varchar(255) NOT NULL) 
+  [1m[36m (18.9ms)[0m  [1mCREATE UNIQUE INDEX "unique_schema_migrations" ON "schema_migrations" ("version")[0m
+  [1m[35m (0.1ms)[0m  SELECT version FROM "schema_migrations"
+  [1m[36m (16.1ms)[0m  [1mINSERT INTO "schema_migrations" (version) VALUES ('20141130214059')[0m
+  [1m[35m (9.6ms)[0m  INSERT INTO "schema_migrations" (version) VALUES ('20111119180638')
+Connecting to database specified by database.yml
+  [1m[36m (1.7ms)[0m  [1mSELECT "schema_migrations"."version" FROM "schema_migrations" [0m
+  [1m[35m (0.2ms)[0m  select sqlite_version(*)
+  [1m[36m (52.7ms)[0m  [1mCREATE TABLE "movies" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "title" varchar(255), "rating" varchar(255), "description" text, "release_date" datetime, "created_at" datetime, "updated_at" datetime, "director" varchar(255)) [0m
+  [1m[35m (10.7ms)[0m  CREATE TABLE "schema_migrations" ("version" varchar(255) NOT NULL) 
+  [1m[36m (11.8ms)[0m  [1mCREATE UNIQUE INDEX "unique_schema_migrations" ON "schema_migrations" ("version")[0m
+  [1m[35m (0.1ms)[0m  SELECT version FROM "schema_migrations"
+  [1m[36m (9.0ms)[0m  [1mINSERT INTO "schema_migrations" (version) VALUES ('20141130214059')[0m
+  [1m[35m (13.1ms)[0m  INSERT INTO "schema_migrations" (version) VALUES ('20111119180638')
+
+
+Started GET "/movies/17" for 127.0.0.1 at 2014-11-30 19:44:06 -0500
+Processing by MoviesController#show as HTML
+  Parameters: {"id"=>"17"}
+  [1m[35mMovie Load (0.2ms)[0m  SELECT "movies".* FROM "movies" WHERE "movies"."id" = ? LIMIT 1  [["id", "17"]]
+  Rendered movies/show.html.haml within layouts/application (54.8ms)
+Completed 500 Internal Server Error in 82.4ms
+
+ActionView::Template::Error (undefined method `find_movie_path' for #<#<Class:0xb5484594>:0xb5c2edbc>):
+    20: = link_to 'Edit', edit_movie_path(@movie)
+    21: = button_to 'Delete', movie_path(@movie), :method => :delete, :confirm => 'Are you sure?'
+    22: = link_to 'Back to movie list', movies_path
+    23: = link_to 'Find Movies With Same Director', find_movie_path(@movie.director)
+  app/views/movies/show.html.haml:23:in `_app_views_movies_show_html_haml___307785551__622739628'
+
+
+  Rendered /home/saasbook/.rvm/gems/ruby-1.9.3-p448/gems/actionpack-3.2.18/lib/action_dispatch/middleware/templates/rescues/_trace.erb (1.7ms)
+  Rendered /home/saasbook/.rvm/gems/ruby-1.9.3-p448/gems/actionpack-3.2.18/lib/action_dispatch/middleware/templates/rescues/_request_and_response.erb (1.3ms)
+  Rendered /home/saasbook/.rvm/gems/ruby-1.9.3-p448/gems/actionpack-3.2.18/lib/action_dispatch/middleware/templates/rescues/template_error.erb within rescues/layout (20.6ms)
+Connecting to database specified by database.yml
+  [1m[36m (1.8ms)[0m  [1mSELECT "schema_migrations"."version" FROM "schema_migrations" [0m
+  [1m[35m (0.2ms)[0m  select sqlite_version(*)
+  [1m[36m (25.6ms)[0m  [1mCREATE TABLE "movies" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "title" varchar(255), "rating" varchar(255), "description" text, "release_date" datetime, "created_at" datetime, "updated_at" datetime, "director" varchar(255)) [0m
+  [1m[35m (11.1ms)[0m  CREATE TABLE "schema_migrations" ("version" varchar(255) NOT NULL) 
+  [1m[36m (11.8ms)[0m  [1mCREATE UNIQUE INDEX "unique_schema_migrations" ON "schema_migrations" ("version")[0m
+  [1m[35m (0.0ms)[0m  SELECT version FROM "schema_migrations"
+  [1m[36m (10.4ms)[0m  [1mINSERT INTO "schema_migrations" (version) VALUES ('20141130214059')[0m
+  [1m[35m (36.6ms)[0m  INSERT INTO "schema_migrations" (version) VALUES ('20111119180638')
+
+
+Started GET "/movies/" for 127.0.0.1 at 2014-11-30 19:47:51 -0500
+Processing by MoviesController#index as HTML
+Redirected to http://localhost:3000/movies?ratings%5BG%5D=1&ratings%5BNC-17%5D=1&ratings%5BPG%5D=1&ratings%5BPG-13%5D=1&ratings%5BR%5D=1&sort=release_date
+Completed 302 Found in 9.8ms (ActiveRecord: 0.0ms)
+
+
+Started GET "/movies?ratings%5BG%5D=1&ratings%5BNC-17%5D=1&ratings%5BPG%5D=1&ratings%5BPG-13%5D=1&ratings%5BR%5D=1&sort=release_date" for 127.0.0.1 at 2014-11-30 19:47:52 -0500
+Processing by MoviesController#index as HTML
+  Parameters: {"ratings"=>{"G"=>"1", "NC-17"=>"1", "PG"=>"1", "PG-13"=>"1", "R"=>"1"}, "sort"=>"release_date"}
+  [1m[36mMovie Load (0.6ms)[0m  [1mSELECT "movies".* FROM "movies" WHERE "movies"."rating" IN ('G', 'NC-17', 'PG', 'PG-13', 'R') ORDER BY release_date[0m
+  Rendered movies/index.html.haml within layouts/application (17.2ms)
+Completed 200 OK in 29.2ms (Views: 22.9ms | ActiveRecord: 0.6ms)
+
+
+Started GET "/assets/application.css?body=1" for 127.0.0.1 at 2014-11-30 19:47:52 -0500
+Served asset /application.css - 304 Not Modified (23ms)
+
+
+Started GET "/assets/application.js?body=1" for 127.0.0.1 at 2014-11-30 19:47:52 -0500
+Served asset /application.js - 304 Not Modified (7ms)
+
+
+Started GET "/assets/jquery_ujs.js?body=1" for 127.0.0.1 at 2014-11-30 19:47:52 -0500
+Served asset /jquery_ujs.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/jquery.js?body=1" for 127.0.0.1 at 2014-11-30 19:47:52 -0500
+Served asset /jquery.js - 304 Not Modified (0ms)
+
+
+Started GET "/movies/17" for 127.0.0.1 at 2014-11-30 19:47:54 -0500
+Processing by MoviesController#show as HTML
+  Parameters: {"id"=>"17"}
+  [1m[35mMovie Load (0.2ms)[0m  SELECT "movies".* FROM "movies" WHERE "movies"."id" = ? LIMIT 1  [["id", "17"]]
+  Rendered movies/show.html.haml within layouts/application (15.0ms)
+Completed 500 Internal Server Error in 18.9ms
+
+ActionView::Template::Error (undefined method `find_movies_path' for #<#<Class:0xb5484594>:0xb5d635ac>):
+    20: = link_to 'Edit', edit_movie_path(@movie)
+    21: = button_to 'Delete', movie_path(@movie), :method => :delete, :confirm => 'Are you sure?'
+    22: = link_to 'Back to movie list', movies_path
+    23: = link_to 'Find Movies With Same Director', find_movies_path(@movie.director)
+  app/views/movies/show.html.haml:23:in `_app_views_movies_show_html_haml___307785551__622128198'
+
+
+  Rendered /home/saasbook/.rvm/gems/ruby-1.9.3-p448/gems/actionpack-3.2.18/lib/action_dispatch/middleware/templates/rescues/_trace.erb (1.8ms)
+  Rendered /home/saasbook/.rvm/gems/ruby-1.9.3-p448/gems/actionpack-3.2.18/lib/action_dispatch/middleware/templates/rescues/_request_and_response.erb (0.8ms)
+  Rendered /home/saasbook/.rvm/gems/ruby-1.9.3-p448/gems/actionpack-3.2.18/lib/action_dispatch/middleware/templates/rescues/template_error.erb within rescues/layout (10.8ms)
+Connecting to database specified by database.yml
+  [1m[36m (1.7ms)[0m  [1mSELECT "schema_migrations"."version" FROM "schema_migrations" [0m
+  [1m[35m (0.2ms)[0m  select sqlite_version(*)
+  [1m[36m (18.3ms)[0m  [1mCREATE TABLE "movies" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "title" varchar(255), "rating" varchar(255), "description" text, "release_date" datetime, "created_at" datetime, "updated_at" datetime, "director" varchar(255)) [0m
+  [1m[35m (8.8ms)[0m  CREATE TABLE "schema_migrations" ("version" varchar(255) NOT NULL) 
+  [1m[36m (34.0ms)[0m  [1mCREATE UNIQUE INDEX "unique_schema_migrations" ON "schema_migrations" ("version")[0m
+  [1m[35m (0.1ms)[0m  SELECT version FROM "schema_migrations"
+  [1m[36m (10.8ms)[0m  [1mINSERT INTO "schema_migrations" (version) VALUES ('20141130214059')[0m
+  [1m[35m (11.4ms)[0m  INSERT INTO "schema_migrations" (version) VALUES ('20111119180638')
+Connecting to database specified by database.yml
+Connecting to database specified by database.yml
+Connecting to database specified by database.yml
+  [1m[36m (15.2ms)[0m  [1mSELECT "schema_migrations"."version" FROM "schema_migrations" [0m
+  [1m[35m (0.2ms)[0m  select sqlite_version(*)
+  [1m[36m (18.7ms)[0m  [1mCREATE TABLE "movies" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "title" varchar(255), "rating" varchar(255), "description" text, "release_date" datetime, "created_at" datetime, "updated_at" datetime, "director" varchar(255)) [0m
+  [1m[35m (11.3ms)[0m  CREATE TABLE "schema_migrations" ("version" varchar(255) NOT NULL) 
+  [1m[36m (9.8ms)[0m  [1mCREATE UNIQUE INDEX "unique_schema_migrations" ON "schema_migrations" ("version")[0m
+  [1m[35m (0.0ms)[0m  SELECT version FROM "schema_migrations"
+  [1m[36m (10.9ms)[0m  [1mINSERT INTO "schema_migrations" (version) VALUES ('20141130214059')[0m
+  [1m[35m (11.3ms)[0m  INSERT INTO "schema_migrations" (version) VALUES ('20111119180638')
+Connecting to database specified by database.yml
+  [1m[36m (2.0ms)[0m  [1mSELECT "schema_migrations"."version" FROM "schema_migrations" [0m
+  [1m[35m (0.2ms)[0m  select sqlite_version(*)
+  [1m[36m (40.0ms)[0m  [1mCREATE TABLE "movies" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "title" varchar(255), "rating" varchar(255), "description" text, "release_date" datetime, "created_at" datetime, "updated_at" datetime, "director" varchar(255)) [0m
+  [1m[35m (8.9ms)[0m  CREATE TABLE "schema_migrations" ("version" varchar(255) NOT NULL) 
+  [1m[36m (15.1ms)[0m  [1mCREATE UNIQUE INDEX "unique_schema_migrations" ON "schema_migrations" ("version")[0m
+  [1m[35m (0.1ms)[0m  SELECT version FROM "schema_migrations"
+  [1m[36m (17.1ms)[0m  [1mINSERT INTO "schema_migrations" (version) VALUES ('20141130214059')[0m
+  [1m[35m (9.7ms)[0m  INSERT INTO "schema_migrations" (version) VALUES ('20111119180638')
+Connecting to database specified by database.yml
+  [1m[36m (2.0ms)[0m  [1mSELECT "schema_migrations"."version" FROM "schema_migrations" [0m
+  [1m[35m (0.2ms)[0m  select sqlite_version(*)
+  [1m[36m (18.8ms)[0m  [1mCREATE TABLE "movies" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "title" varchar(255), "rating" varchar(255), "description" text, "release_date" datetime, "created_at" datetime, "updated_at" datetime, "director" varchar(255)) [0m
+  [1m[35m (11.7ms)[0m  CREATE TABLE "schema_migrations" ("version" varchar(255) NOT NULL) 
+  [1m[36m (10.2ms)[0m  [1mCREATE UNIQUE INDEX "unique_schema_migrations" ON "schema_migrations" ("version")[0m
+  [1m[35m (0.1ms)[0m  SELECT version FROM "schema_migrations"
+  [1m[36m (11.3ms)[0m  [1mINSERT INTO "schema_migrations" (version) VALUES ('20141130214059')[0m
+  [1m[35m (11.2ms)[0m  INSERT INTO "schema_migrations" (version) VALUES ('20111119180638')
+Connecting to database specified by database.yml
+  [1m[36m (1.8ms)[0m  [1mSELECT "schema_migrations"."version" FROM "schema_migrations" [0m
+  [1m[35m (0.2ms)[0m  select sqlite_version(*)
+  [1m[36m (18.3ms)[0m  [1mCREATE TABLE "movies" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "title" varchar(255), "rating" varchar(255), "description" text, "release_date" datetime, "created_at" datetime, "updated_at" datetime, "director" varchar(255)) [0m
+  [1m[35m (27.5ms)[0m  CREATE TABLE "schema_migrations" ("version" varchar(255) NOT NULL) 
+  [1m[36m (19.1ms)[0m  [1mCREATE UNIQUE INDEX "unique_schema_migrations" ON "schema_migrations" ("version")[0m
+  [1m[35m (0.1ms)[0m  SELECT version FROM "schema_migrations"
+  [1m[36m (9.5ms)[0m  [1mINSERT INTO "schema_migrations" (version) VALUES ('20141130214059')[0m
+  [1m[35m (22.1ms)[0m  INSERT INTO "schema_migrations" (version) VALUES ('20111119180638')
+Connecting to database specified by database.yml
+  [1m[36m (2.1ms)[0m  [1mSELECT "schema_migrations"."version" FROM "schema_migrations" [0m
+  [1m[35m (0.2ms)[0m  select sqlite_version(*)
+  [1m[36m (31.3ms)[0m  [1mCREATE TABLE "movies" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "title" varchar(255), "rating" varchar(255), "description" text, "release_date" datetime, "created_at" datetime, "updated_at" datetime, "director" varchar(255)) [0m
+  [1m[35m (23.4ms)[0m  CREATE TABLE "schema_migrations" ("version" varchar(255) NOT NULL) 
+  [1m[36m (9.7ms)[0m  [1mCREATE UNIQUE INDEX "unique_schema_migrations" ON "schema_migrations" ("version")[0m
+  [1m[35m (0.0ms)[0m  SELECT version FROM "schema_migrations"
+  [1m[36m (14.2ms)[0m  [1mINSERT INTO "schema_migrations" (version) VALUES ('20141130214059')[0m
+  [1m[35m (16.1ms)[0m  INSERT INTO "schema_migrations" (version) VALUES ('20111119180638')
+Connecting to database specified by database.yml
+Connecting to database specified by database.yml
+  [1m[36m (2.1ms)[0m  [1mSELECT "schema_migrations"."version" FROM "schema_migrations" [0m
+  [1m[35m (0.2ms)[0m  select sqlite_version(*)
+  [1m[36m (23.1ms)[0m  [1mCREATE TABLE "movies" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "title" varchar(255), "rating" varchar(255), "description" text, "release_date" datetime, "created_at" datetime, "updated_at" datetime, "director" varchar(255)) [0m
+  [1m[35m (8.2ms)[0m  CREATE TABLE "schema_migrations" ("version" varchar(255) NOT NULL) 
+  [1m[36m (42.4ms)[0m  [1mCREATE UNIQUE INDEX "unique_schema_migrations" ON "schema_migrations" ("version")[0m
+  [1m[35m (0.1ms)[0m  SELECT version FROM "schema_migrations"
+  [1m[36m (11.8ms)[0m  [1mINSERT INTO "schema_migrations" (version) VALUES ('20141130214059')[0m
+  [1m[35m (10.4ms)[0m  INSERT INTO "schema_migrations" (version) VALUES ('20111119180638')
+Connecting to database specified by database.yml
+  [1m[36m (1.9ms)[0m  [1mSELECT "schema_migrations"."version" FROM "schema_migrations" [0m
+  [1m[35m (0.2ms)[0m  select sqlite_version(*)
+  [1m[36m (26.1ms)[0m  [1mCREATE TABLE "movies" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "title" varchar(255), "rating" varchar(255), "description" text, "release_date" datetime, "created_at" datetime, "updated_at" datetime, "director" varchar(255)) [0m
+  [1m[35m (43.7ms)[0m  CREATE TABLE "schema_migrations" ("version" varchar(255) NOT NULL) 
+  [1m[36m (17.7ms)[0m  [1mCREATE UNIQUE INDEX "unique_schema_migrations" ON "schema_migrations" ("version")[0m
+  [1m[35m (0.1ms)[0m  SELECT version FROM "schema_migrations"
+  [1m[36m (11.8ms)[0m  [1mINSERT INTO "schema_migrations" (version) VALUES ('20141130214059')[0m
+  [1m[35m (21.6ms)[0m  INSERT INTO "schema_migrations" (version) VALUES ('20111119180638')
+Connecting to database specified by database.yml
+  [1m[36m (1.9ms)[0m  [1mSELECT "schema_migrations"."version" FROM "schema_migrations" [0m
+  [1m[35m (0.2ms)[0m  select sqlite_version(*)
+  [1m[36m (45.1ms)[0m  [1mCREATE TABLE "movies" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "title" varchar(255), "rating" varchar(255), "description" text, "release_date" datetime, "created_at" datetime, "updated_at" datetime, "director" varchar(255)) [0m
+  [1m[35m (9.0ms)[0m  CREATE TABLE "schema_migrations" ("version" varchar(255) NOT NULL) 
+  [1m[36m (16.3ms)[0m  [1mCREATE UNIQUE INDEX "unique_schema_migrations" ON "schema_migrations" ("version")[0m
+  [1m[35m (0.1ms)[0m  SELECT version FROM "schema_migrations"
+  [1m[36m (9.0ms)[0m  [1mINSERT INTO "schema_migrations" (version) VALUES ('20141130214059')[0m
+  [1m[35m (31.7ms)[0m  INSERT INTO "schema_migrations" (version) VALUES ('20111119180638')
+Connecting to database specified by database.yml
+  [1m[36m (2.1ms)[0m  [1mSELECT "schema_migrations"."version" FROM "schema_migrations" [0m
+  [1m[35m (0.2ms)[0m  select sqlite_version(*)
+  [1m[36m (15.8ms)[0m  [1mCREATE TABLE "movies" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "title" varchar(255), "rating" varchar(255), "description" text, "release_date" datetime, "created_at" datetime, "updated_at" datetime, "director" varchar(255)) [0m
+  [1m[35m (10.9ms)[0m  CREATE TABLE "schema_migrations" ("version" varchar(255) NOT NULL) 
+  [1m[36m (10.9ms)[0m  [1mCREATE UNIQUE INDEX "unique_schema_migrations" ON "schema_migrations" ("version")[0m
+  [1m[35m (0.0ms)[0m  SELECT version FROM "schema_migrations"
+  [1m[36m (10.4ms)[0m  [1mINSERT INTO "schema_migrations" (version) VALUES ('20141130214059')[0m
+  [1m[35m (11.2ms)[0m  INSERT INTO "schema_migrations" (version) VALUES ('20111119180638')
+Connecting to database specified by database.yml
+  [1m[36m (2.1ms)[0m  [1mSELECT "schema_migrations"."version" FROM "schema_migrations" [0m
+  [1m[35m (0.2ms)[0m  select sqlite_version(*)
+  [1m[36m (56.6ms)[0m  [1mCREATE TABLE "movies" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "title" varchar(255), "rating" varchar(255), "description" text, "release_date" datetime, "created_at" datetime, "updated_at" datetime, "director" varchar(255)) [0m
+  [1m[35m (9.2ms)[0m  CREATE TABLE "schema_migrations" ("version" varchar(255) NOT NULL) 
+  [1m[36m (22.7ms)[0m  [1mCREATE UNIQUE INDEX "unique_schema_migrations" ON "schema_migrations" ("version")[0m
+  [1m[35m (0.1ms)[0m  SELECT version FROM "schema_migrations"
+  [1m[36m (15.7ms)[0m  [1mINSERT INTO "schema_migrations" (version) VALUES ('20141130214059')[0m
+  [1m[35m (26.1ms)[0m  INSERT INTO "schema_migrations" (version) VALUES ('20111119180638')
+Connecting to database specified by database.yml
+  [1m[36m (2.5ms)[0m  [1mSELECT "schema_migrations"."version" FROM "schema_migrations" [0m
+  [1m[35m (0.3ms)[0m  select sqlite_version(*)
+  [1m[36m (166.5ms)[0m  [1mCREATE TABLE "movies" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "title" varchar(255), "rating" varchar(255), "description" text, "release_date" datetime, "created_at" datetime, "updated_at" datetime, "director" varchar(255)) [0m
+  [1m[35m (23.4ms)[0m  CREATE TABLE "schema_migrations" ("version" varchar(255) NOT NULL) 
+  [1m[36m (25.7ms)[0m  [1mCREATE UNIQUE INDEX "unique_schema_migrations" ON "schema_migrations" ("version")[0m
+  [1m[35m (0.0ms)[0m  SELECT version FROM "schema_migrations"
+  [1m[36m (21.9ms)[0m  [1mINSERT INTO "schema_migrations" (version) VALUES ('20141130214059')[0m
+  [1m[35m (19.1ms)[0m  INSERT INTO "schema_migrations" (version) VALUES ('20111119180638')
+Connecting to database specified by database.yml
+  [1m[36m (1.9ms)[0m  [1mSELECT "schema_migrations"."version" FROM "schema_migrations" [0m
+  [1m[35m (0.2ms)[0m  select sqlite_version(*)
+  [1m[36m (91.5ms)[0m  [1mCREATE TABLE "movies" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "title" varchar(255), "rating" varchar(255), "description" text, "release_date" datetime, "created_at" datetime, "updated_at" datetime, "director" varchar(255)) [0m
+  [1m[35m (23.6ms)[0m  CREATE TABLE "schema_migrations" ("version" varchar(255) NOT NULL) 
+  [1m[36m (15.5ms)[0m  [1mCREATE UNIQUE INDEX "unique_schema_migrations" ON "schema_migrations" ("version")[0m
+  [1m[35m (0.1ms)[0m  SELECT version FROM "schema_migrations"
+  [1m[36m (10.5ms)[0m  [1mINSERT INTO "schema_migrations" (version) VALUES ('20141130214059')[0m
+  [1m[35m (38.7ms)[0m  INSERT INTO "schema_migrations" (version) VALUES ('20111119180638')
+Connecting to database specified by database.yml
+  [1m[36m (1.8ms)[0m  [1mSELECT "schema_migrations"."version" FROM "schema_migrations" [0m
+  [1m[35m (0.3ms)[0m  select sqlite_version(*)
+  [1m[36m (49.7ms)[0m  [1mCREATE TABLE "movies" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "title" varchar(255), "rating" varchar(255), "description" text, "release_date" datetime, "created_at" datetime, "updated_at" datetime, "director" varchar(255)) [0m
+  [1m[35m (26.8ms)[0m  CREATE TABLE "schema_migrations" ("version" varchar(255) NOT NULL) 
+  [1m[36m (12.1ms)[0m  [1mCREATE UNIQUE INDEX "unique_schema_migrations" ON "schema_migrations" ("version")[0m
+  [1m[35m (0.1ms)[0m  SELECT version FROM "schema_migrations"
+  [1m[36m (9.6ms)[0m  [1mINSERT INTO "schema_migrations" (version) VALUES ('20141130214059')[0m
+  [1m[35m (15.1ms)[0m  INSERT INTO "schema_migrations" (version) VALUES ('20111119180638')
+Connecting to database specified by database.yml
+  [1m[36m (1.5ms)[0m  [1mSELECT "schema_migrations"."version" FROM "schema_migrations" [0m
+  [1m[35m (0.2ms)[0m  select sqlite_version(*)
+  [1m[36m (35.0ms)[0m  [1mCREATE TABLE "movies" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "title" varchar(255), "rating" varchar(255), "description" text, "release_date" datetime, "created_at" datetime, "updated_at" datetime, "director" varchar(255)) [0m
+  [1m[35m (9.2ms)[0m  CREATE TABLE "schema_migrations" ("version" varchar(255) NOT NULL) 
+  [1m[36m (53.8ms)[0m  [1mCREATE UNIQUE INDEX "unique_schema_migrations" ON "schema_migrations" ("version")[0m
+  [1m[35m (0.1ms)[0m  SELECT version FROM "schema_migrations"
+  [1m[36m (10.2ms)[0m  [1mINSERT INTO "schema_migrations" (version) VALUES ('20141130214059')[0m
+  [1m[35m (13.0ms)[0m  INSERT INTO "schema_migrations" (version) VALUES ('20111119180638')
+Connecting to database specified by database.yml
+  [1m[36m (1.9ms)[0m  [1mSELECT "schema_migrations"."version" FROM "schema_migrations" [0m
+  [1m[35m (0.3ms)[0m  select sqlite_version(*)
+  [1m[36m (15.7ms)[0m  [1mCREATE TABLE "movies" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "title" varchar(255), "rating" varchar(255), "description" text, "release_date" datetime, "created_at" datetime, "updated_at" datetime, "director" varchar(255)) [0m
+  [1m[35m (10.9ms)[0m  CREATE TABLE "schema_migrations" ("version" varchar(255) NOT NULL) 
+  [1m[36m (10.7ms)[0m  [1mCREATE UNIQUE INDEX "unique_schema_migrations" ON "schema_migrations" ("version")[0m
+  [1m[35m (0.0ms)[0m  SELECT version FROM "schema_migrations"
+  [1m[36m (11.3ms)[0m  [1mINSERT INTO "schema_migrations" (version) VALUES ('20141130214059')[0m
+  [1m[35m (11.5ms)[0m  INSERT INTO "schema_migrations" (version) VALUES ('20111119180638')
+Connecting to database specified by database.yml
+  [1m[36m (2.1ms)[0m  [1mSELECT "schema_migrations"."version" FROM "schema_migrations" [0m
+  [1m[35m (0.2ms)[0m  select sqlite_version(*)
+  [1m[36m (47.4ms)[0m  [1mCREATE TABLE "movies" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "title" varchar(255), "rating" varchar(255), "description" text, "release_date" datetime, "created_at" datetime, "updated_at" datetime, "director" varchar(255)) [0m
+  [1m[35m (9.9ms)[0m  CREATE TABLE "schema_migrations" ("version" varchar(255) NOT NULL) 
+  [1m[36m (20.2ms)[0m  [1mCREATE UNIQUE INDEX "unique_schema_migrations" ON "schema_migrations" ("version")[0m
+  [1m[35m (0.1ms)[0m  SELECT version FROM "schema_migrations"
+  [1m[36m (10.5ms)[0m  [1mINSERT INTO "schema_migrations" (version) VALUES ('20141130214059')[0m
+  [1m[35m (23.4ms)[0m  INSERT INTO "schema_migrations" (version) VALUES ('20111119180638')
+
+
+Started GET "/movies" for 127.0.0.1 at 2014-11-30 20:34:53 -0500
+Processing by MoviesController#index as HTML
+Redirected to http://localhost:3000/movies?ratings%5BG%5D=1&ratings%5BNC-17%5D=1&ratings%5BPG%5D=1&ratings%5BPG-13%5D=1&ratings%5BR%5D=1&sort=release_date
+Completed 302 Found in 2.0ms (ActiveRecord: 0.0ms)
+
+
+Started GET "/movies?ratings%5BG%5D=1&ratings%5BNC-17%5D=1&ratings%5BPG%5D=1&ratings%5BPG-13%5D=1&ratings%5BR%5D=1&sort=release_date" for 127.0.0.1 at 2014-11-30 20:34:54 -0500
+Processing by MoviesController#index as HTML
+  Parameters: {"ratings"=>{"G"=>"1", "NC-17"=>"1", "PG"=>"1", "PG-13"=>"1", "R"=>"1"}, "sort"=>"release_date"}
+  [1m[36mMovie Load (0.8ms)[0m  [1mSELECT "movies".* FROM "movies" WHERE "movies"."rating" IN ('G', 'NC-17', 'PG', 'PG-13', 'R') ORDER BY release_date[0m
+  Rendered movies/index.html.haml within layouts/application (16.6ms)
+Completed 200 OK in 87.0ms (Views: 22.6ms | ActiveRecord: 1.5ms)
+
+
+Started GET "/assets/application.css?body=1" for 127.0.0.1 at 2014-11-30 20:34:54 -0500
+Served asset /application.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/application.js?body=1" for 127.0.0.1 at 2014-11-30 20:34:54 -0500
+Served asset /application.js - 304 Not Modified (6ms)
+
+
+Started GET "/assets/jquery_ujs.js?body=1" for 127.0.0.1 at 2014-11-30 20:34:54 -0500
+Served asset /jquery_ujs.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/jquery.js?body=1" for 127.0.0.1 at 2014-11-30 20:34:54 -0500
+Served asset /jquery.js - 304 Not Modified (0ms)
+
+
+Started GET "/movies/9" for 127.0.0.1 at 2014-11-30 20:34:56 -0500
+Processing by MoviesController#show as HTML
+  Parameters: {"id"=>"9"}
+  [1m[35mMovie Load (0.3ms)[0m  SELECT "movies".* FROM "movies" WHERE "movies"."id" = ? LIMIT 1  [["id", "9"]]
+  Rendered movies/show.html.haml within layouts/application (13.3ms)
+Completed 200 OK in 30.3ms (Views: 28.1ms | ActiveRecord: 0.3ms)
+
+
+Started GET "/assets/application.css?body=1" for 127.0.0.1 at 2014-11-30 20:34:56 -0500
+Served asset /application.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/application.js?body=1" for 127.0.0.1 at 2014-11-30 20:34:56 -0500
+Served asset /application.js - 304 Not Modified (5ms)
+
+
+Started GET "/assets/jquery_ujs.js?body=1" for 127.0.0.1 at 2014-11-30 20:34:56 -0500
+Served asset /jquery_ujs.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/jquery.js?body=1" for 127.0.0.1 at 2014-11-30 20:34:56 -0500
+Served asset /jquery.js - 304 Not Modified (0ms)
+
+
+Started GET "/movies/9/find?title=Raiders+of+the+Lost+Ark" for 127.0.0.1 at 2014-11-30 20:34:59 -0500
+Processing by MoviesController#find as HTML
+  Parameters: {"title"=>"Raiders of the Lost Ark", "id"=>"9"}
+  [1m[36mMovie Load (1.0ms)[0m  [1mSELECT "movies".* FROM "movies" WHERE "movies"."director" IS NULL[0m
+  Rendered movies/find.html.haml within layouts/application (1.2ms)
+Completed 200 OK in 16406.0ms (Views: 14.4ms | ActiveRecord: 1.0ms)
+
+
+Started GET "/assets/application.css?body=1" for 127.0.0.1 at 2014-11-30 20:35:16 -0500
+Served asset /application.css - 304 Not Modified (4ms)
+
+
+Started GET "/assets/application.js?body=1" for 127.0.0.1 at 2014-11-30 20:35:16 -0500
+Served asset /application.js - 304 Not Modified (1ms)
+
+
+Started GET "/assets/jquery_ujs.js?body=1" for 127.0.0.1 at 2014-11-30 20:35:16 -0500
+Served asset /jquery_ujs.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/jquery.js?body=1" for 127.0.0.1 at 2014-11-30 20:35:16 -0500
+Served asset /jquery.js - 304 Not Modified (0ms)
+
+
+Started GET "/movies/9/find?title=Raiders+of+the+Lost+Ark" for 127.0.0.1 at 2014-11-30 20:35:33 -0500
+Processing by MoviesController#find as HTML
+  Parameters: {"title"=>"Raiders of the Lost Ark", "id"=>"9"}
+  [1m[35mMovie Load (1.6ms)[0m  SELECT "movies".* FROM "movies" WHERE "movies"."director" IS NULL
+  Rendered movies/find.html.haml within layouts/application (3.0ms)
+Completed 200 OK in 6386.7ms (Views: 9.8ms | ActiveRecord: 1.6ms)
+
+
+Started GET "/assets/application.css?body=1" for 127.0.0.1 at 2014-11-30 20:35:39 -0500
+Served asset /application.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/application.js?body=1" for 127.0.0.1 at 2014-11-30 20:35:39 -0500
+Served asset /application.js - 304 Not Modified (16ms)
+
+
+Started GET "/assets/jquery_ujs.js?body=1" for 127.0.0.1 at 2014-11-30 20:35:39 -0500
+Served asset /jquery_ujs.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/jquery.js?body=1" for 127.0.0.1 at 2014-11-30 20:35:39 -0500
+Served asset /jquery.js - 304 Not Modified (5ms)
+
+
+Started GET "/movies/9/find?title=Raiders+of+the+Lost+Ark" for 127.0.0.1 at 2014-11-30 20:36:09 -0500
+Processing by MoviesController#find as HTML
+  Parameters: {"title"=>"Raiders of the Lost Ark", "id"=>"9"}
+  [1m[36mMovie Load (1.0ms)[0m  [1mSELECT "movies".* FROM "movies" WHERE "movies"."director" IS NULL[0m
+  Rendered movies/find.html.haml within layouts/application (3.2ms)
+Completed 200 OK in 4766.1ms (Views: 11.3ms | ActiveRecord: 1.0ms)
+
+
+Started GET "/assets/application.css?body=1" for 127.0.0.1 at 2014-11-30 20:36:14 -0500
+Served asset /application.css - 304 Not Modified (16ms)
+
+
+Started GET "/assets/application.js?body=1" for 127.0.0.1 at 2014-11-30 20:36:14 -0500
+Served asset /application.js - 304 Not Modified (1ms)
+
+
+Started GET "/assets/jquery_ujs.js?body=1" for 127.0.0.1 at 2014-11-30 20:36:14 -0500
+Served asset /jquery_ujs.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/jquery.js?body=1" for 127.0.0.1 at 2014-11-30 20:36:14 -0500
+Served asset /jquery.js - 304 Not Modified (0ms)
+
+
+Started GET "/movies/9" for 127.0.0.1 at 2014-11-30 20:40:38 -0500
+Processing by MoviesController#show as HTML
+  Parameters: {"id"=>"9"}
+  [1m[35mMovie Load (0.2ms)[0m  SELECT "movies".* FROM "movies" WHERE "movies"."id" = ? LIMIT 1  [["id", "9"]]
+  Rendered movies/show.html.haml within layouts/application (2.7ms)
+Completed 200 OK in 12.0ms (Views: 7.6ms | ActiveRecord: 0.2ms)
+
+
+Started GET "/assets/application.css?body=1" for 127.0.0.1 at 2014-11-30 20:40:38 -0500
+Served asset /application.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/application.js?body=1" for 127.0.0.1 at 2014-11-30 20:40:38 -0500
+Served asset /application.js - 304 Not Modified (15ms)
+
+
+Started GET "/assets/jquery_ujs.js?body=1" for 127.0.0.1 at 2014-11-30 20:40:38 -0500
+Served asset /jquery_ujs.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/jquery.js?body=1" for 127.0.0.1 at 2014-11-30 20:40:38 -0500
+Served asset /jquery.js - 304 Not Modified (0ms)
+
+
+Started GET "/movies/9/find?title=Raiders+of+the+Lost+Ark" for 127.0.0.1 at 2014-11-30 20:40:39 -0500
+Processing by MoviesController#find as HTML
+  Parameters: {"title"=>"Raiders of the Lost Ark", "id"=>"9"}
+  [1m[36mMovie Load (2.0ms)[0m  [1mSELECT "movies".* FROM "movies" WHERE "movies"."director" IS NULL[0m
+  Rendered movies/find.html.haml within layouts/application (6.7ms)
+Completed 200 OK in 3679.1ms (Views: 15.5ms | ActiveRecord: 2.0ms)
+
+
+Started GET "/assets/application.css?body=1" for 127.0.0.1 at 2014-11-30 20:40:43 -0500
+Served asset /application.css - 304 Not Modified (24ms)
+
+
+Started GET "/assets/application.js?body=1" for 127.0.0.1 at 2014-11-30 20:40:43 -0500
+Served asset /application.js - 304 Not Modified (27ms)
+
+
+Started GET "/assets/jquery_ujs.js?body=1" for 127.0.0.1 at 2014-11-30 20:40:43 -0500
+Served asset /jquery_ujs.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/jquery.js?body=1" for 127.0.0.1 at 2014-11-30 20:40:43 -0500
+Served asset /jquery.js - 304 Not Modified (0ms)
+
+
+Started GET "/movies/9/find?title=Raiders+of+the+Lost+Ark" for 127.0.0.1 at 2014-11-30 20:41:39 -0500
+Processing by MoviesController#find as HTML
+  Parameters: {"title"=>"Raiders of the Lost Ark", "id"=>"9"}
+  [1m[35mMovie Load (0.9ms)[0m  SELECT "movies".* FROM "movies" WHERE "movies"."director" IS NULL
+  Rendered movies/find.html.haml within layouts/application (8.4ms)
+Completed 500 Internal Server Error in 4250.0ms
+
+ActionView::Template::Error (undefined method `director' for nil:NilClass):
+    1: %h1 All Movies by  #{@movie_director}
+    2: 
+    3: = debug(@movie.director)
+  app/views/movies/find.html.haml:3:in `_app_views_movies_find_html_haml__751075371__628200458'
+
+
+  Rendered /home/saasbook/.rvm/gems/ruby-1.9.3-p448/gems/actionpack-3.2.18/lib/action_dispatch/middleware/templates/rescues/_trace.erb (1.8ms)
+  Rendered /home/saasbook/.rvm/gems/ruby-1.9.3-p448/gems/actionpack-3.2.18/lib/action_dispatch/middleware/templates/rescues/_request_and_response.erb (5.3ms)
+  Rendered /home/saasbook/.rvm/gems/ruby-1.9.3-p448/gems/actionpack-3.2.18/lib/action_dispatch/middleware/templates/rescues/template_error.erb within rescues/layout (23.8ms)
+
+
+Started GET "/movies/9/find?title=Raiders+of+the+Lost+Ark" for 127.0.0.1 at 2014-11-30 20:42:02 -0500
+Processing by MoviesController#find as HTML
+  Parameters: {"title"=>"Raiders of the Lost Ark", "id"=>"9"}
+  [1m[36mMovie Load (1.8ms)[0m  [1mSELECT "movies".* FROM "movies" WHERE "movies"."director" IS NULL[0m
+  Rendered movies/find.html.haml within layouts/application (3.7ms)
+Completed 200 OK in 5033.3ms (Views: 24.6ms | ActiveRecord: 1.8ms)
+
+
+Started GET "/assets/application.css?body=1" for 127.0.0.1 at 2014-11-30 20:42:08 -0500
+Served asset /application.css - 304 Not Modified (26ms)
+
+
+Started GET "/assets/application.js?body=1" for 127.0.0.1 at 2014-11-30 20:42:08 -0500
+Served asset /application.js - 304 Not Modified (10ms)
+
+
+Started GET "/assets/jquery_ujs.js?body=1" for 127.0.0.1 at 2014-11-30 20:42:08 -0500
+Served asset /jquery_ujs.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/jquery.js?body=1" for 127.0.0.1 at 2014-11-30 20:42:08 -0500
+Served asset /jquery.js - 304 Not Modified (0ms)
+
+
+Started GET "/movies/9/find?title=Raiders+of+the+Lost+Ark" for 127.0.0.1 at 2014-11-30 20:42:32 -0500
+Processing by MoviesController#find as HTML
+  Parameters: {"title"=>"Raiders of the Lost Ark", "id"=>"9"}
+  [1m[35mMovie Load (1.0ms)[0m  SELECT "movies".* FROM "movies" WHERE "movies"."director" IS NULL
+  Rendered movies/find.html.haml within layouts/application (4.2ms)
+Completed 200 OK in 14148.2ms (Views: 15.9ms | ActiveRecord: 1.0ms)
+
+
+Started GET "/movies/9" for 127.0.0.1 at 2014-11-30 20:42:46 -0500
+Processing by MoviesController#show as HTML
+  Parameters: {"id"=>"9"}
+  [1m[36mMovie Load (0.1ms)[0m  [1mSELECT "movies".* FROM "movies" WHERE "movies"."id" = ? LIMIT 1[0m  [["id", "9"]]
+  Rendered movies/show.html.haml within layouts/application (2.6ms)
+Completed 200 OK in 27.6ms (Views: 20.8ms | ActiveRecord: 0.1ms)
+
+
+Started GET "/assets/application.css?body=1" for 127.0.0.1 at 2014-11-30 20:42:46 -0500
+Served asset /application.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/application.js?body=1" for 127.0.0.1 at 2014-11-30 20:42:46 -0500
+Served asset /application.js - 304 Not Modified (16ms)
+
+
+Started GET "/assets/jquery_ujs.js?body=1" for 127.0.0.1 at 2014-11-30 20:42:46 -0500
+Served asset /jquery_ujs.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/jquery.js?body=1" for 127.0.0.1 at 2014-11-30 20:42:46 -0500
+Served asset /jquery.js - 304 Not Modified (0ms)
+
+
+Started GET "/movies/9/edit" for 127.0.0.1 at 2014-11-30 20:42:49 -0500
+Processing by MoviesController#edit as HTML
+  Parameters: {"id"=>"9"}
+  [1m[35mMovie Load (0.3ms)[0m  SELECT "movies".* FROM "movies" WHERE "movies"."id" = ? LIMIT 1  [["id", "9"]]
+  Rendered movies/edit.html.haml within layouts/application (24.2ms)
+Completed 200 OK in 39.0ms (Views: 36.5ms | ActiveRecord: 0.3ms)
+
+
+Started GET "/assets/application.css?body=1" for 127.0.0.1 at 2014-11-30 20:42:49 -0500
+Served asset /application.css - 304 Not Modified (14ms)
+
+
+Started GET "/assets/application.js?body=1" for 127.0.0.1 at 2014-11-30 20:42:49 -0500
+Served asset /application.js - 304 Not Modified (4ms)
+
+
+Started GET "/assets/jquery_ujs.js?body=1" for 127.0.0.1 at 2014-11-30 20:42:49 -0500
+Served asset /jquery_ujs.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/jquery.js?body=1" for 127.0.0.1 at 2014-11-30 20:42:49 -0500
+Served asset /jquery.js - 304 Not Modified (0ms)
+
+
+Started PUT "/movies/9" for 127.0.0.1 at 2014-11-30 20:42:56 -0500
+Processing by MoviesController#update as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"sAmGQmKSUdS6b5fmiCVL8+3RCITYJkvdiKvh5ILiS60=", "movie"=>{"title"=>"Raiders of the Lost Ark", "rating"=>"PG", "release_date(1i)"=>"1981", "release_date(2i)"=>"6", "release_date(3i)"=>"12", "director"=>"George Lucas"}, "commit"=>"Update Movie Info", "id"=>"9"}
+  [1m[36mMovie Load (8.0ms)[0m  [1mSELECT "movies".* FROM "movies" WHERE "movies"."id" = ? LIMIT 1[0m  [["id", "9"]]
+  [1m[35m (0.1ms)[0m  begin transaction
+  [1m[36m (0.7ms)[0m  [1mUPDATE "movies" SET "director" = 'George Lucas', "updated_at" = '2014-12-01 01:42:56.410824' WHERE "movies"."id" = 9[0m
+  [1m[35m (36.0ms)[0m  commit transaction
+Redirected to http://localhost:3000/movies/9
+Completed 302 Found in 58.3ms (ActiveRecord: 44.8ms)
+
+
+Started GET "/movies/9" for 127.0.0.1 at 2014-11-30 20:42:56 -0500
+Processing by MoviesController#show as HTML
+  Parameters: {"id"=>"9"}
+  [1m[36mMovie Load (1.2ms)[0m  [1mSELECT "movies".* FROM "movies" WHERE "movies"."id" = ? LIMIT 1[0m  [["id", "9"]]
+  Rendered movies/show.html.haml within layouts/application (2.8ms)
+Completed 200 OK in 13.8ms (Views: 10.7ms | ActiveRecord: 1.2ms)
+
+
+Started GET "/assets/application.css?body=1" for 127.0.0.1 at 2014-11-30 20:42:56 -0500
+Served asset /application.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/application.js?body=1" for 127.0.0.1 at 2014-11-30 20:42:56 -0500
+Served asset /application.js - 304 Not Modified (12ms)
+
+
+Started GET "/assets/jquery_ujs.js?body=1" for 127.0.0.1 at 2014-11-30 20:42:56 -0500
+Served asset /jquery_ujs.js - 304 Not Modified (9ms)
+
+
+Started GET "/assets/jquery.js?body=1" for 127.0.0.1 at 2014-11-30 20:42:56 -0500
+Served asset /jquery.js - 304 Not Modified (0ms)
+
+
+Started GET "/movies/9/find?director=George+Lucas&title=Raiders+of+the+Lost+Ark" for 127.0.0.1 at 2014-11-30 20:42:59 -0500
+Processing by MoviesController#find as HTML
+  Parameters: {"director"=>"George Lucas", "title"=>"Raiders of the Lost Ark", "id"=>"9"}
+  [1m[35mMovie Load (0.4ms)[0m  SELECT "movies".* FROM "movies" WHERE "movies"."director" = 'George Lucas'
+  Rendered movies/find.html.haml within layouts/application (0.6ms)
+Completed 200 OK in 5021.6ms (Views: 5.9ms | ActiveRecord: 0.4ms)
+
+
+Started GET "/assets/application.css?body=1" for 127.0.0.1 at 2014-11-30 20:43:04 -0500
+Served asset /application.css - 304 Not Modified (16ms)
+
+
+Started GET "/assets/application.js?body=1" for 127.0.0.1 at 2014-11-30 20:43:04 -0500
+Served asset /application.js - 304 Not Modified (1ms)
+
+
+Started GET "/assets/jquery_ujs.js?body=1" for 127.0.0.1 at 2014-11-30 20:43:04 -0500
+Served asset /jquery_ujs.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/jquery.js?body=1" for 127.0.0.1 at 2014-11-30 20:43:04 -0500
+Served asset /jquery.js - 304 Not Modified (3ms)
+
+
+Started GET "/movies/9" for 127.0.0.1 at 2014-11-30 20:44:14 -0500
+Processing by MoviesController#show as HTML
+  Parameters: {"id"=>"9"}
+  [1m[36mMovie Load (0.3ms)[0m  [1mSELECT "movies".* FROM "movies" WHERE "movies"."id" = ? LIMIT 1[0m  [["id", "9"]]
+  Rendered movies/show.html.haml within layouts/application (3.4ms)
+Completed 200 OK in 17.2ms (Views: 14.4ms | ActiveRecord: 0.3ms)
+
+
+Started GET "/assets/application.css?body=1" for 127.0.0.1 at 2014-11-30 20:44:14 -0500
+Served asset /application.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/application.js?body=1" for 127.0.0.1 at 2014-11-30 20:44:14 -0500
+Served asset /application.js - 304 Not Modified (2ms)
+
+
+Started GET "/assets/jquery_ujs.js?body=1" for 127.0.0.1 at 2014-11-30 20:44:14 -0500
+Served asset /jquery_ujs.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/jquery.js?body=1" for 127.0.0.1 at 2014-11-30 20:44:14 -0500
+Served asset /jquery.js - 304 Not Modified (1ms)
+
+
+Started GET "/movies/9/find?director=George+Lucas&title=Raiders+of+the+Lost+Ark" for 127.0.0.1 at 2014-11-30 20:44:15 -0500
+Processing by MoviesController#find as HTML
+  Parameters: {"director"=>"George Lucas", "title"=>"Raiders of the Lost Ark", "id"=>"9"}
+  [1m[35mMovie Load (0.7ms)[0m  SELECT "movies".* FROM "movies" WHERE "movies"."director" = 'George Lucas'
+  Rendered movies/find.html.haml within layouts/application (17.0ms)
+Completed 200 OK in 3964.7ms (Views: 36.8ms | ActiveRecord: 0.7ms)
+
+
+Started GET "/assets/application.css?body=1" for 127.0.0.1 at 2014-11-30 20:44:20 -0500
+Served asset /application.css - 304 Not Modified (25ms)
+
+
+Started GET "/assets/application.js?body=1" for 127.0.0.1 at 2014-11-30 20:44:20 -0500
+Served asset /application.js - 304 Not Modified (5ms)
+
+
+Started GET "/assets/jquery_ujs.js?body=1" for 127.0.0.1 at 2014-11-30 20:44:20 -0500
+Served asset /jquery_ujs.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/jquery.js?body=1" for 127.0.0.1 at 2014-11-30 20:44:20 -0500
+Served asset /jquery.js - 304 Not Modified (3ms)
+
+
+Started GET "/movies/" for 127.0.0.1 at 2014-11-30 20:44:32 -0500
+Processing by MoviesController#index as HTML
+Redirected to http://localhost:3000/movies?ratings%5BG%5D=1&ratings%5BNC-17%5D=1&ratings%5BPG%5D=1&ratings%5BPG-13%5D=1&ratings%5BR%5D=1&sort=release_date
+Completed 302 Found in 1.4ms (ActiveRecord: 0.0ms)
+
+
+Started GET "/movies?ratings%5BG%5D=1&ratings%5BNC-17%5D=1&ratings%5BPG%5D=1&ratings%5BPG-13%5D=1&ratings%5BR%5D=1&sort=release_date" for 127.0.0.1 at 2014-11-30 20:44:32 -0500
+Processing by MoviesController#index as HTML
+  Parameters: {"ratings"=>{"G"=>"1", "NC-17"=>"1", "PG"=>"1", "PG-13"=>"1", "R"=>"1"}, "sort"=>"release_date"}
+  [1m[36mMovie Load (0.5ms)[0m  [1mSELECT "movies".* FROM "movies" WHERE "movies"."rating" IN ('G', 'NC-17', 'PG', 'PG-13', 'R') ORDER BY release_date[0m
+  Rendered movies/index.html.haml within layouts/application (30.2ms)
+Completed 200 OK in 48.4ms (Views: 43.9ms | ActiveRecord: 0.5ms)
+
+
+Started GET "/assets/application.css?body=1" for 127.0.0.1 at 2014-11-30 20:44:32 -0500
+Served asset /application.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/application.js?body=1" for 127.0.0.1 at 2014-11-30 20:44:32 -0500
+Served asset /application.js - 304 Not Modified (21ms)
+
+
+Started GET "/assets/jquery.js?body=1" for 127.0.0.1 at 2014-11-30 20:44:32 -0500
+Served asset /jquery.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/jquery_ujs.js?body=1" for 127.0.0.1 at 2014-11-30 20:44:32 -0500
+Served asset /jquery_ujs.js - 304 Not Modified (0ms)
+
+
+Started GET "/movies/new" for 127.0.0.1 at 2014-11-30 20:44:39 -0500
+Processing by MoviesController#new as HTML
+  Rendered movies/new.html.haml within layouts/application (10.8ms)
+Completed 200 OK in 18.0ms (Views: 17.4ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/assets/application.css?body=1" for 127.0.0.1 at 2014-11-30 20:44:39 -0500
+Served asset /application.css - 304 Not Modified (23ms)
+
+
+Started GET "/assets/application.js?body=1" for 127.0.0.1 at 2014-11-30 20:44:39 -0500
+Served asset /application.js - 304 Not Modified (1ms)
+
+
+Started GET "/assets/jquery_ujs.js?body=1" for 127.0.0.1 at 2014-11-30 20:44:39 -0500
+Served asset /jquery_ujs.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/jquery.js?body=1" for 127.0.0.1 at 2014-11-30 20:44:39 -0500
+Served asset /jquery.js - 304 Not Modified (9ms)
+
+
+Started POST "/movies" for 127.0.0.1 at 2014-11-30 20:44:53 -0500
+Processing by MoviesController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"sAmGQmKSUdS6b5fmiCVL8+3RCITYJkvdiKvh5ILiS60=", "movie"=>{"title"=>"Star Wars", "rating"=>"PG", "release_date(1i)"=>"2009", "release_date(2i)"=>"5", "release_date(3i)"=>"12"}, "commit"=>"Save Changes"}
+  [1m[35m (0.2ms)[0m  begin transaction
+  [1m[36mSQL (5.1ms)[0m  [1mINSERT INTO "movies" ("created_at", "description", "director", "rating", "release_date", "title", "updated_at") VALUES (?, ?, ?, ?, ?, ?, ?)[0m  [["created_at", Mon, 01 Dec 2014 01:44:53 UTC +00:00], ["description", nil], ["director", nil], ["rating", "PG"], ["release_date", Tue, 12 May 2009 00:00:00 UTC +00:00], ["title", "Star Wars"], ["updated_at", Mon, 01 Dec 2014 01:44:53 UTC +00:00]]
+  [1m[35m (54.1ms)[0m  commit transaction
+Redirected to http://localhost:3000/movies
+Completed 302 Found in 64.5ms (ActiveRecord: 59.3ms)
+
+
+Started GET "/movies" for 127.0.0.1 at 2014-11-30 20:44:53 -0500
+Processing by MoviesController#index as HTML
+Redirected to http://localhost:3000/movies?ratings%5BG%5D=1&ratings%5BNC-17%5D=1&ratings%5BPG%5D=1&ratings%5BPG-13%5D=1&ratings%5BR%5D=1&sort=release_date
+Completed 302 Found in 5.6ms (ActiveRecord: 0.0ms)
+
+
+Started GET "/movies?ratings%5BG%5D=1&ratings%5BNC-17%5D=1&ratings%5BPG%5D=1&ratings%5BPG-13%5D=1&ratings%5BR%5D=1&sort=release_date" for 127.0.0.1 at 2014-11-30 20:44:53 -0500
+Processing by MoviesController#index as HTML
+  Parameters: {"ratings"=>{"G"=>"1", "NC-17"=>"1", "PG"=>"1", "PG-13"=>"1", "R"=>"1"}, "sort"=>"release_date"}
+  [1m[36mMovie Load (0.5ms)[0m  [1mSELECT "movies".* FROM "movies" WHERE "movies"."rating" IN ('G', 'NC-17', 'PG', 'PG-13', 'R') ORDER BY release_date[0m
+  Rendered movies/index.html.haml within layouts/application (18.6ms)
+Completed 200 OK in 31.2ms (Views: 26.8ms | ActiveRecord: 0.5ms)
+
+
+Started GET "/assets/application.css?body=1" for 127.0.0.1 at 2014-11-30 20:44:54 -0500
+Served asset /application.css - 304 Not Modified (11ms)
+
+
+Started GET "/assets/jquery.js?body=1" for 127.0.0.1 at 2014-11-30 20:44:54 -0500
+Served asset /jquery.js - 304 Not Modified (1ms)
+
+
+Started GET "/assets/application.js?body=1" for 127.0.0.1 at 2014-11-30 20:44:54 -0500
+Served asset /application.js - 304 Not Modified (1ms)
+
+
+Started GET "/assets/jquery_ujs.js?body=1" for 127.0.0.1 at 2014-11-30 20:44:54 -0500
+Served asset /jquery_ujs.js - 304 Not Modified (0ms)
+
+
+Started GET "/movies/21" for 127.0.0.1 at 2014-11-30 20:44:58 -0500
+Processing by MoviesController#show as HTML
+  Parameters: {"id"=>"21"}
+  [1m[35mMovie Load (0.3ms)[0m  SELECT "movies".* FROM "movies" WHERE "movies"."id" = ? LIMIT 1  [["id", "21"]]
+  Rendered movies/show.html.haml within layouts/application (3.3ms)
+Completed 200 OK in 23.6ms (Views: 16.0ms | ActiveRecord: 0.3ms)
+
+
+Started GET "/assets/application.css?body=1" for 127.0.0.1 at 2014-11-30 20:44:58 -0500
+Served asset /application.css - 304 Not Modified (107ms)
+
+
+Started GET "/assets/application.js?body=1" for 127.0.0.1 at 2014-11-30 20:44:58 -0500
+Served asset /application.js - 304 Not Modified (1ms)
+
+
+Started GET "/assets/jquery_ujs.js?body=1" for 127.0.0.1 at 2014-11-30 20:44:58 -0500
+Served asset /jquery_ujs.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/jquery.js?body=1" for 127.0.0.1 at 2014-11-30 20:44:58 -0500
+Served asset /jquery.js - 304 Not Modified (0ms)
+
+
+Started GET "/movies/21/edit" for 127.0.0.1 at 2014-11-30 20:45:00 -0500
+Processing by MoviesController#edit as HTML
+  Parameters: {"id"=>"21"}
+  [1m[36mMovie Load (0.2ms)[0m  [1mSELECT "movies".* FROM "movies" WHERE "movies"."id" = ? LIMIT 1[0m  [["id", "21"]]
+  Rendered movies/edit.html.haml within layouts/application (23.2ms)
+Completed 200 OK in 36.6ms (Views: 34.7ms | ActiveRecord: 0.2ms)
+
+
+Started GET "/assets/application.css?body=1" for 127.0.0.1 at 2014-11-30 20:45:00 -0500
+Served asset /application.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/application.js?body=1" for 127.0.0.1 at 2014-11-30 20:45:00 -0500
+Served asset /application.js - 304 Not Modified (6ms)
+
+
+Started GET "/assets/jquery_ujs.js?body=1" for 127.0.0.1 at 2014-11-30 20:45:00 -0500
+Served asset /jquery_ujs.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/jquery.js?body=1" for 127.0.0.1 at 2014-11-30 20:45:00 -0500
+Served asset /jquery.js - 304 Not Modified (1ms)
+
+
+Started PUT "/movies/21" for 127.0.0.1 at 2014-11-30 20:45:04 -0500
+Processing by MoviesController#update as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"sAmGQmKSUdS6b5fmiCVL8+3RCITYJkvdiKvh5ILiS60=", "movie"=>{"title"=>"Star Wars", "rating"=>"PG", "release_date(1i)"=>"2009", "release_date(2i)"=>"5", "release_date(3i)"=>"12", "director"=>"George Lucas"}, "commit"=>"Update Movie Info", "id"=>"21"}
+  [1m[35mMovie Load (0.3ms)[0m  SELECT "movies".* FROM "movies" WHERE "movies"."id" = ? LIMIT 1  [["id", "21"]]
+  [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+  [1m[35m (0.4ms)[0m  UPDATE "movies" SET "director" = 'George Lucas', "updated_at" = '2014-12-01 01:45:04.999305' WHERE "movies"."id" = 21
+  [1m[36m (57.2ms)[0m  [1mcommit transaction[0m
+Redirected to http://localhost:3000/movies/21
+Completed 302 Found in 71.6ms (ActiveRecord: 58.0ms)
+
+
+Started GET "/movies/21" for 127.0.0.1 at 2014-11-30 20:45:05 -0500
+Processing by MoviesController#show as HTML
+  Parameters: {"id"=>"21"}
+  [1m[35mMovie Load (0.1ms)[0m  SELECT "movies".* FROM "movies" WHERE "movies"."id" = ? LIMIT 1  [["id", "21"]]
+  Rendered movies/show.html.haml within layouts/application (7.2ms)
+Completed 200 OK in 26.5ms (Views: 25.0ms | ActiveRecord: 0.1ms)
+
+
+Started GET "/assets/application.css?body=1" for 127.0.0.1 at 2014-11-30 20:45:05 -0500
+Served asset /application.css - 304 Not Modified (15ms)
+
+
+Started GET "/assets/application.js?body=1" for 127.0.0.1 at 2014-11-30 20:45:05 -0500
+Served asset /application.js - 304 Not Modified (6ms)
+
+
+Started GET "/assets/jquery_ujs.js?body=1" for 127.0.0.1 at 2014-11-30 20:45:05 -0500
+Served asset /jquery_ujs.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/jquery.js?body=1" for 127.0.0.1 at 2014-11-30 20:45:05 -0500
+Served asset /jquery.js - 304 Not Modified (0ms)
+
+
+Started GET "/movies/21/find?director=George+Lucas&title=Star+Wars" for 127.0.0.1 at 2014-11-30 20:45:07 -0500
+Processing by MoviesController#find as HTML
+  Parameters: {"director"=>"George Lucas", "title"=>"Star Wars", "id"=>"21"}
+  [1m[36mMovie Load (1.8ms)[0m  [1mSELECT "movies".* FROM "movies" WHERE "movies"."director" = 'George Lucas'[0m
+  Rendered movies/find.html.haml within layouts/application (13.4ms)
+Completed 200 OK in 4767.0ms (Views: 23.2ms | ActiveRecord: 1.8ms)
+
+
+Started GET "/assets/application.css?body=1" for 127.0.0.1 at 2014-11-30 20:45:12 -0500
+Served asset /application.css - 304 Not Modified (26ms)
+
+
+Started GET "/assets/application.js?body=1" for 127.0.0.1 at 2014-11-30 20:45:12 -0500
+Served asset /application.js - 304 Not Modified (8ms)
+
+
+Started GET "/assets/jquery_ujs.js?body=1" for 127.0.0.1 at 2014-11-30 20:45:12 -0500
+Served asset /jquery_ujs.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/jquery.js?body=1" for 127.0.0.1 at 2014-11-30 20:45:12 -0500
+Served asset /jquery.js - 304 Not Modified (1ms)
+Connecting to database specified by database.yml
+  [1m[36m (2.8ms)[0m  [1mSELECT "schema_migrations"."version" FROM "schema_migrations" [0m
+  [1m[35m (0.2ms)[0m  select sqlite_version(*)
+  [1m[36m (37.7ms)[0m  [1mCREATE TABLE "movies" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "title" varchar(255), "rating" varchar(255), "description" text, "release_date" datetime, "created_at" datetime, "updated_at" datetime, "director" varchar(255)) [0m
+  [1m[35m (10.1ms)[0m  CREATE TABLE "schema_migrations" ("version" varchar(255) NOT NULL) 
+  [1m[36m (12.7ms)[0m  [1mCREATE UNIQUE INDEX "unique_schema_migrations" ON "schema_migrations" ("version")[0m
+  [1m[35m (0.1ms)[0m  SELECT version FROM "schema_migrations"
+  [1m[36m (10.2ms)[0m  [1mINSERT INTO "schema_migrations" (version) VALUES ('20141130214059')[0m
+  [1m[35m (23.7ms)[0m  INSERT INTO "schema_migrations" (version) VALUES ('20111119180638')
